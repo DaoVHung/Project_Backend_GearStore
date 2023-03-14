@@ -1,4 +1,4 @@
-package ra.payload.request;
+package ra.dev.payload.request;
 
 public class LoginRequest {
     private String userName;

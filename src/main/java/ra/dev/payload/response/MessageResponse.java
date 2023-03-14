@@ -1,4 +1,4 @@
-package ra.payload.response;
+package ra.dev.payload.response;
 
 public class MessageResponse {
     private String message;

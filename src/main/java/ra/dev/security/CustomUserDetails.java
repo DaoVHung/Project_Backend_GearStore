@@ -1,4 +1,4 @@
-package ra.security;
+package ra.dev.security;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
@@ -6,7 +6,8 @@ import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import ra.model.entity.Users;
+import ra.dev.model.entity.Users;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,6 +22,8 @@ public class CustomUserDetails implements UserDetails {
     private String email;
     private String phone;
     private boolean userStatus;
+    private String fullName;
+    private String address;
     private Collection<? extends GrantedAuthority> authorities;
 
     @Override
@@ -40,8 +43,10 @@ public class CustomUserDetails implements UserDetails {
                 user.getUserName(),
                 user.getPassword(),
                 user.getEmail(),
-                user.getPhone(),
+                user.getPhoneNumber(),
                 user.isUserStatus(),
+                user.getFullName(),
+                user.getAddress(),
                 listAuthorities
         );
 
